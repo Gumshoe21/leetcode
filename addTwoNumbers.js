@@ -11,7 +11,7 @@ function ListNode(val, next) {
 function addTwoNumbers(list1, list2) {
   let carry = 0
   let current = new ListNode()
-  const solution =current 
+  const solution = current
   // the loop needs to keep running while list1 or list 2 isn't null, and since list1 and list2 could be different lengths, either one of the being null could be possible.
   while (list1 || list2 || carry) {
     let val1 = 0
@@ -28,9 +28,8 @@ function addTwoNumbers(list1, list2) {
       list2 = list2.next
     }
     const sum = val1 + val2 + carry // 3 + 7 = 10
-    carry = sum > 9 ? 1 : 0 // Math.floor(sum / 10)
-    const digit = sum % 10
-
+    carry = sum > 9 ? 1 : 0 // 1 
+    const digit = sum % 10 
 
     current.next = new ListNode(digit)
     current = currentNode
@@ -38,7 +37,6 @@ function addTwoNumbers(list1, list2) {
   }
   return headNode.next
 }
-
 
 // Example linked lists
 // List 1: 2 -> 4 -> 3

@@ -8,29 +8,27 @@ If the index is on the left edge of the array, then the left sum is 0 because th
 Return the leftmost pivot index. If no such index exists, return -1.
 */
 function pivotIndex(nums: number[]): number {
-  let arrayLength = nums.length;
-  
+  let arrayLength = nums.length
 
-  
   for (let i = 0; i < arrayLength; i++) {
-    let leftSum = 0;
-    let rightSum = 0;
+    let leftSum = 0
+    let rightSum = 0
 
     if (i === 0) {
-      leftSum = 0;
+      leftSum = 0
     } else if (i === arrayLength - 1) {
-      rightSum = 0;
+      rightSum = 0
     }
-    
+
     // [1,7,3,6,5,6].length === 6
-  
-      rightSum = nums.slice(i,arrayLength+1).reduce((acc,curr) => acc + curr, 0)
-      leftSum = nums.slice(0, i+1).reduce((acc,curr) => acc+curr,0)
+
+    rightSum = nums.slice(i, arrayLength + 1).reduce((acc, curr) => acc + curr, 0)
+    leftSum = nums.slice(0, i + 1).reduce((acc, curr) => acc + curr, 0)
     if (rightSum === leftSum) {
-        return i
-      } 
-      if (i === arrayLength - 1) {
-        return -1
-      }
+      return i
     }
-};
+    if (i === arrayLength - 1) {
+      return -1
+    }
+  }
+}
