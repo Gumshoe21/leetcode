@@ -30,3 +30,24 @@ function reverseList(l: ListNode | null): ListNode | null {
   }
   return head.next
 }
+
+/*
+ALT ANSWER
+var reverseList = function(head) {
+    if(head === null) return head;
+    let arr = [];
+    while (head) {
+        arr.push(head)
+        head = head.next;
+    }    
+        console.log(arr)
+    arr[0].next = null;
+    console.log(arr)
+    for (let i = 1; i < arr.length; i++) {
+        arr[i].next = arr[i-1]
+        console.log('ITERATION', i)
+        console.log(arr)
+    }
+    return arr[arr.length-1];
+};
+*/
