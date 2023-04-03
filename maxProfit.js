@@ -5,19 +5,27 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 */
-const maxProfit = (prices) => {
-  let left = 0 // Buy
-  let right = 1 // sell
-  let max_profit = 0
-  while (right < prices.length) {
-    if (prices[left] < prices[right]) {
-      let profit = prices[right] - prices[left] // our current profit
-
-      max_profit = Math.max(max_profit, profit)
+function maxProfit(prices: number[]): number {
+  // The result variable.
+  let maxProfit = 0
+  // Set two pointers for buy and sell.
+  let buy = 0,
+    sell = 1
+  // Run a loop while sell is on the last index or less in the array.
+  while (sell < prices.length) {
+    // If the current buy is less than the current sell...
+    if (prices[buy] < prices[sell]) {
+      // ...set the profit difference to: sell - buy
+      let price = prices[sell] - prices[buy]
+      // Determine if the profit difference we just calc'd is the greatest maxProfit we've ever had. If so, set maxPrice to it. If not, do nothing.
+      maxProfit = Math.max(price, maxProfit)
     } else {
-      left = right
+      // If the current buy is not less than the curent sell, move the buy up to where sell is so we can work with that number as the newest minimum buy.
+      buy = sell
     }
-    right++
+    // Inc sell so as to compare a new value to buy.
+    sell++
   }
-  return max_profit
+  // Return answer.
+  return maxProfit
 }
