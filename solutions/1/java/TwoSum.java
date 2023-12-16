@@ -1,23 +1,24 @@
+package java;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /*
-Example:
-
-Input: nums = [2, 7, 11, 15], target = 9
-Output: [0, 1]
-Explanation: Because nums[0] + nums[1] = 2 + 7 = 9
-
-Steps:
-
-1. Create a HashMap that stores an Integer as both its key and value.
-2. Create a for-loop that iterates over the length of the nums array.
-3. Find the complement for the current index (the target number minus the number at the current index in the nums array)
-4. Check if the HashMap contains the complement
-  4a. If it does, return the answer in the form of an  integer array containing the indices of the two nums equalling the target num.
-5. If we're after the above loop, that means the complement isn't in the HashMap yet, so store it
-6. If we're after the loop, that means there's no two sum solution. Throw an IllegalArgumentException.
-*/
+ * Example:
+ * 
+ * Input: nums = [2, 7, 11, 15], target = 9 Output: [0, 1] Explanation: Because nums[0] + nums[1] =
+ * 2 + 7 = 9
+ * 
+ * Steps:
+ * 
+ * 1. Create a HashMap that stores an Integer as both its key and value. 2. Create a for-loop that
+ * iterates over the length of the nums array. 3. Find the complement for the current index (the
+ * target number minus the number at the current index in the nums array) 4. Check if the HashMap
+ * contains the complement 4a. If it does, return the answer in the form of an integer array
+ * containing the indices of the two nums equalling the target num. 5. If we're after the above
+ * loop, that means the complement isn't in the HashMap yet, so store it 6. If we're after the loop,
+ * that means there's no two sum solution. Throw an IllegalArgumentException.
+ */
 
 public class TwoSum {
 
